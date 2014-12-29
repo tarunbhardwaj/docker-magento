@@ -34,6 +34,16 @@ ADD mage-cache.xml /var/www/app/etc/mage-cache.xml
 
 ADD seturl.php /var/www/seturl.php
 
+# Install magento connector api
+
+ADD install_magento_tryton_connector.sh /install_magento_tryton_connector.sh
+
+RUN chmod 0755 /install_magento_tryton_connector.sh
+
+RUN /install_magento_tryton_connector.sh
+
+# install start script
+
 ADD start.sh /start.sh
 
 RUN chmod 0755 /start.sh 
