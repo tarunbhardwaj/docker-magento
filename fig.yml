@@ -1,0 +1,13 @@
+magento:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - mysql:db
+    - memcached:cache
+
+mysql:
+  image: dockerfile/mariadb
+
+memcached:
+  image: sylvainlasnier/memcached
